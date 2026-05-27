@@ -53,6 +53,9 @@
         .hero-text {
             text-align: center;
             margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: heroTextReveal 1.2s ease-out 8s forwards;
         }
 
         .hero-name {
@@ -70,6 +73,18 @@
             letter-spacing: 1px;
             color: #ee8257;
             margin-top: 18px;
+        }
+
+        @keyframes heroTextReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
         }
 
         .profile-section {
