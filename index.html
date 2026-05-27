@@ -87,6 +87,52 @@
             }
         }
 
+        .scroll-button {
+            margin-top: 45px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.72);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: revealAndPulse 2.2s ease-in-out 9.5s infinite;
+            opacity: 0;
+        }
+
+        .scroll-button::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 11px solid transparent;
+            border-right: 11px solid transparent;
+            border-top: 16px solid #000000;
+        }
+
+        @keyframes revealAndPulse {
+            0% {
+                opacity: 0;
+                transform: scale(1.8);
+            }
+
+            20% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale(1.14);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
         .profile-section {
             min-height: 100vh;
             background: #ffffff;
@@ -137,6 +183,8 @@
             <source src="Video_WebSite_Long.mp4" type="video/mp4">
         </video>
     </div>
+
+    <button class="scroll-button" onclick="document.querySelector('.profile-section').scrollIntoView({behavior: 'smooth' });"></button>
         
     </section>
 
