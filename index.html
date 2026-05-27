@@ -98,8 +98,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: revealAndPulse 2.2s ease-in-out 9.5s infinite;
+            transform: scale(0.8);
             opacity: 0;
+            animation:
+                revealButton 0.8s ease-out 9.5s forwards,
+                pulseButton 2.2s ease-in-out 10.3s infinite;
         }
 
         .scroll-button::before {
@@ -111,24 +114,28 @@
             border-top: 16px solid #000000;
         }
 
-        @keyframes revealAndPulse {
-            0% {
+        @keyframes revealButton {
+            from {
                 opacity: 0;
-                transform: scale(1.8);
+                transform: scale(0.8);
             }
 
-            20% {
+            to {
                 opacity: 1;
                 transform: scale(1);
             }
+        }
+        
+        @keyframes pulseButton {
+            0% {
+                transform: scale(1);
+            }
 
-            60% {
-                opacity: 1;
+            50% {
                 transform: scale(1.14);
             }
 
             100% {
-                opacity: 1;
                 transform: scale(1);
             }
         }
